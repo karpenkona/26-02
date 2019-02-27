@@ -1,0 +1,6 @@
+{
+  "port" : 8085,
+  "mongoose": {
+    "uri": "mongodb://localhost/tips"
+  }
+}

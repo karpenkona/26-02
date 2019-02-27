@@ -1,0 +1,48 @@
+extends ./layout
+block content
+    if  market
+        img.tips-icon(src='../../img/' + market.img)
+        h5.tips-title #{market.name}
+        p.tips-title #{market.description}
+        if (market.comments.length == 0)
+            .alert.alert-primary(role='alert')
+                | Еще никто не комментировал. Войдите и оставьте первый комментарий
+        else
+            p.lead.tips-comment
+                | Комментарии:
+
+            each item in market.comments
+                .tips-comment
+                    small.text-muted от #{item.name}:
+                    p #{item.text}
+                    hr
+
+
+        if user
+            #mid(data-market-id=market._id)
+            form(name='my')
+                .form-group
+                    .input-group.margin-bottom-sm
+                        textarea.form-control(rows=3, placeholder='Добавить комментарий', name='comment')
+                .form-group
+                button.btn-primary.btn(type='submit') Сохранить
+
+    script.
+        var form = document.forms.my;
+        //var id=form.attr('id');
+        form.addEventListener("submit", addComment, false)
+
+
+        function addComment(e) {
+            var mid = document.getElementById('mid').dataset.marketId;
+            var body = "id=" + mid+"&comment="+form.elements.comment.value;
+            var xhr = new XMLHttpRequest();
+
+            xhr.open('POST', '/market', true);
+            xhr.setRequestHeader("Content-Type", "application/x-www-form-urlencoded");
+            xhr.setRequestHeader("X-Requested-With", "XMLHttpRequest");
+
+            xhr.send(body);
+
+
+        }

@@ -1,0 +1,68 @@
+doctype html
+html(lang='ru')
+    head
+        if market
+            title
+                | #{market.name}
+            meta(name='description', content=market.description + ' - Tips')
+            meta(property='og:type', content='article')
+            meta(property='og:title', content=market.name.replace(/&quot;/g, "\x22").replace(/&#039;/g, "'"))
+            meta(property='og:description', content='Подробнее читайте на сайте')
+            meta(property='og:image', content='#/' + market.img)
+            meta(property='og:locale', content='ru_RU')
+
+
+        else
+            title Tips
+            meta(name='description', content='Кэшбэк')
+
+            meta(property='og:site_name', content='Tips')
+            meta(property='og:locale', content='ru_RU')
+            meta(name='keywords', content='Tips')
+            meta(name='news_keywords', content='кэшбэк')
+            meta(name='Author', content='tips-mart.com')
+
+
+        meta(charset='utf-8')
+        meta(name='viewport', content='width=device-width, initial-scale=1, shrink-to-fit=no')
+        link(rel='stylesheet', href='https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css', integrity='sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T', crossorigin='anonymous')
+        link(href='/css/carusel.css?5', rel='stylesheet')
+
+
+    body
+        nav.navbar.navbar-expand-lg.navbar-light.bg-light
+            a.navbar-brand(href='/')
+                img.d-inline-block.align-top(src='../favicon.png', height="36", alt='Tips')
+                |     Tips Mart
+            button.navbar-toggler(type='button', data-toggle='collapse', data-target='#navbarNav', aria-controls='navbarNav', aria-expanded='false', aria-label='Toggle navigation')
+                span.navbar-toggler-icon
+            #navbarNav.collapse.navbar-collapse
+                ul.navbar-nav
+                    if user
+
+                        li.nav-item
+                            a.nav-link(href='/addmarket')
+                                | Добавить магазин
+                                span.sr-only (current)
+                        li.nav-item
+                            .nav-link
+                                | Партнер: #{user.name} (#{user._id})
+                            span.sr-only (current)
+                        li.nav-item
+                            a.nav-link(href='/logout')
+                                | Выйти
+                                span.sr-only (current)
+                    else
+                        li.nav-item
+                            a.nav-link(href='/login')
+                                | Войти / Регистрация
+                                span.sr-only (current)
+
+
+        .container
+
+            block content
+
+
+
+

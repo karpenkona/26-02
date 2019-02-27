@@ -1,0 +1,17 @@
+extends ./layout
+block content
+
+    if !markets
+        p Ничего нет
+        if !user
+            p зайдите в систему и создайте витрины
+    else
+        each item in markets
+            img.tips-icon-item(src='../../img/' + item.img)
+
+            h5 #{item.name}
+
+            p
+                a.btn.btn-outline-secondary(href='/market/' + item._id, target='_blank')
+                    | Перейти к магазину
+            hr

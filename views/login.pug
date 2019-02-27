@@ -1,0 +1,59 @@
+extends ./layout
+block content
+
+    if user
+        h1= user.name
+        p #{user.email}
+        p= user.id
+        p Вы уже вошли в систему
+        hr
+        a(href='/login/logout') Выйти
+    else
+        .row
+            .col-sm-12.col-md-4.col-lg-4
+                h2 Регистрация
+                p Введите данные для прохождения регистрации
+                    form(name='reg', action='/register', method='post')
+                        .form-group
+                            .input-group.margin-bottom-sm
+                                span.input-group-addon
+                                    i.fa.fa-user-circle-o.fa-fw(aria-hidden='true')
+                                input.form-control(type='text', placeholder='Имя (логин)', name='name')
+
+                        .form-group
+                            .input-group.margin-bottom-sm
+                                span.input-group-addon
+                                    i.fa.fa-money.fa-fw(aria-hidden='true')
+                                input.form-control(type='text', placeholder='e-mail', name='email')
+
+                        .form-group
+                            .input-group.margin-bottom-sm
+                                span.input-group-addon
+                                    i.fa.fa-user-circle-o.fa-fw(aria-hidden='true')
+                                input.form-control(type='password', placeholder='Password', name='password')
+                        button.btn-primary.btn(type='submit') Регистрация
+
+            .col-sm-12.col-md-4.col-lg-4
+                h2 Войти
+                if messege
+                    p #{messege}
+                p Введите данные если у вас уже есть акаунт
+                    form(name='log', action='/login', method='post')
+                        .form-group
+                            .input-group.margin-bottom-sm
+                                span.input-group-addon
+                                    i.fa.fa-user-circle-o.fa-fw(aria-hidden='true')
+                                input.form-control(type='text', placeholder='Введите имя (логин)', name='email')
+
+
+
+                        .form-group
+                            .input-group.margin-bottom-sm
+                                span.input-group-addon
+                                    i.fa.fa-user-circle-o.fa-fw(aria-hidden='true')
+                                input.form-control(type='password', placeholder='Password', name='password')
+                        button.btn-primary.btn(type='submit') Вход
+
+            .col-sm-12.col-md-4.col-lg-4
+                h2 Добро пожаловать
+                p Мы рады новым партнерам
