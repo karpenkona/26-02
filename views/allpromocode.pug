@@ -1,0 +1,20 @@
+extends ./layout
+block content
+
+    if !promo
+        p Promocode нет
+        if !user
+            p нужно залогинится
+    else
+        each item in promo
+            //img.tips-icon-item(src='../../img/' + item.img)
+
+            h5 #{item.code}
+
+            p #{item.description}
+            p #{item.activated}
+            p #{item.isActive}
+
+                //- a.btn.btn-outline-secondary(href='/market/' + item._id, target='_blank')
+                //-     | Перейти к магазину
+            hr

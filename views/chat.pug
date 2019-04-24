@@ -1,0 +1,68 @@
+head
+	script(src='/js/socket.io.js')
+	script(src='./js/jquery-3.3.1.min.js')
+	script(src='./js/chat-io.js')
+	title Socket.IO chat
+	style.
+		* { margin: 0; padding: 0; box-sizing: border-box; }
+		body { font: 13px Helvetica, Arial; }
+		form { background: #000; padding: 3px; position: fixed; bottom: 10; width: 50%; }
+		form input { border: 0; padding: 10px; width: 80%; margin-right: .5%; }
+		form button { width: 19%; border: none; padding: 10px; }
+		#messages, #rooms { list-style-type: none; margin: 0; padding: 0; }
+		#messages, #rooms li { padding: 5px 10px; }
+		#messages, #rooms li:nth-child(odd) { background: #eee; }
+		.npe {display: none}
+		.pe {display: block}
+		.leftmess {float: right}
+		.floatleft {float:left}
+		.floatright {float:right}
+		.red {color: red}
+-
+	if (user) {
+		const suser= user;
+
+	}
+
+	
+	const messdata = data;
+
+if user
+	p#ya #{user.name}
+else 
+	p#ya anonim
+
+#users
+	if users
+		p Активные пользователи
+		each item in users
+			if user.name != item.name
+				label
+					input(type='radio', name='frend', value=item.name)
+					| #{item.name}
+
+
+ul#messages
+	if err
+		p #{err}
+	if users
+		each item in users
+			div.cm.npe(id=item.name)
+				p Чат с #{item.name}
+				ul
+					if data
+						each mess in data
+							if (mess.from == item.name)
+								li
+									strong Я: 
+									| #{mess.text}
+							else if(mess.to == item.name)
+								li
+									strong #{mess.to} :
+									| #{mess.text}
+
+form(action='')
+	input#m(autocomplete='off')
+	button Отправить
+
+

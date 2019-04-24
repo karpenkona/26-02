@@ -27,6 +27,7 @@ html(lang='ru')
         meta(name='viewport', content='width=device-width, initial-scale=1, shrink-to-fit=no')
         link(rel='stylesheet', href='https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css', integrity='sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T', crossorigin='anonymous')
         link(href='/css/carusel.css?5', rel='stylesheet')
+        script(src='/js/jquery-3.3.1.min.js')     
 
 
     body
@@ -43,6 +44,21 @@ html(lang='ru')
                         li.nav-item
                             a.nav-link(href='/addmarket')
                                 | Добавить магазин
+                                span.sr-only (current)
+                        
+                        li.nav-item
+                            a.nav-link(href='/addpromo')
+                                | Добавить промокод
+                                span.sr-only (current)
+
+                        li.nav-item
+                            a.nav-link(href='/allpromocode')
+                                | Все промокоды
+                                span.sr-only (current)
+
+                        li.nav-item
+                            a.nav-link(href='/mypromo')
+                                | мои промокоды
                                 span.sr-only (current)
                         li.nav-item
                             .nav-link
@@ -62,7 +78,7 @@ html(lang='ru')
         .container
 
             block content
-
+block scripts
 
 
 

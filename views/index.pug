@@ -1,6 +1,12 @@
 extends ./layout
 block content
 
+    .b-search__inp
+        input#find-shops(type='text', name='header-search', placeholder='Найти магазин')
+        .b-search__control
+            i.fal.fa-search.fa-fw
+        .b-header-search-list
+
     if !markets
         p Ничего нет
         if !user
@@ -15,3 +21,7 @@ block content
                 a.btn.btn-outline-secondary(href='/market/' + item._id, target='_blank')
                     | Перейти к магазину
             hr
+block scripts
+    //script(src='/js/EasyAutocomplete-1.3.5/jquery.easy-autocomplete.min.js')
+    // script(src='/js/serch.controler.js')
+    script(src='/js/serch.js')                

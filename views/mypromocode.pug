@@ -1,0 +1,84 @@
+extends ./layout
+block content
+    -
+        
+        var formatterH = new Intl.DateTimeFormat("ru", {
+          hour: "numeric",
+          minute: "numeric",
+          //second: "numeric"
+        });
+        var formatterD = new Intl.DateTimeFormat("ru", {
+          style: 'percent',  
+          day: '2-digit',
+          month: "numeric",
+          year: "numeric"
+        });
+        const getNormalDate = (date) => {
+            const newDate = new Date(date);
+
+            let day = newDate.getDate();
+            let month = newDate.getMonth() + 1;
+            const year = newDate.getFullYear();
+
+            if (day.toString().length < 2) {
+                day = `0${day}`;
+            }
+
+            if (month.toString().length < 2) {
+                month = `0${month}`;
+            }
+
+            return `${day}.${month}.${year}`;
+        };
+
+    h2 Добавить промокод
+    form(name='my')
+        .form-group
+            .input-group.margin-bottom-sm
+                span.input-group-addon
+                    i.fa.fa-user-circle-o.fa-fw(aria-hidden='true')
+                input.form-control(type='text', placeholder='Code', name='code')
+
+        .form-group
+
+        button.btn-primary.btn(type='submit') добавить промокод
+    p #{promo.length}
+
+    if !promo
+        p Promocode нет
+        if !user
+            p нужно залогинится
+    else
+        //h5 #{promo}
+        each item in promo
+            - const expiresDay = new Date(item.expires).getMonth()+':'
+            //img.tips-icon-item(src='../../img/' + item.img)
+
+            //h5 #{item.code}
+            h5 Название: #{item.code.code}
+            h5 #{getNormalDate(item.expires)} - 
+            h5 #{formatterD.format(item.activate)} - #{formatterH.format(item.activate)}
+            h5 #{item.code.description}
+
+            //- p #{item.description}
+            //- p #{item.activated}
+            //- p #{item.isActive}
+
+                //- a.btn.btn-outline-secondary(href='/market/' + item._id, target='_blank')
+                //-     | Перейти к магазину
+            hr
+    if (promo.length === 0)   
+        p Промокоды пока не добавлены
+    script.
+        var form = document.forms.my;
+        form.addEventListener("submit", function (event) {
+
+            var xhr = new XMLHttpRequest();
+            var formd = new FormData(form);
+
+            xhr.open('post', '/addmypromo2', true);
+
+            xhr.send(formd);
+
+
+        });         

@@ -1,4 +1,5 @@
 var mongoose = require('mongoose');
+//var Promo = require('/promo.js');
 
 var user = new mongoose.Schema({
     name : {
@@ -22,7 +23,16 @@ var user = new mongoose.Schema({
         default: 'partner',
         required: true
 
-    }
+    },
+    promocodes: [{
+        code: {
+          type: mongoose.Schema.ObjectId,
+          ref: 'Promocode',
+      },
+
+      expires: Date,
+      activate: Date,
+  }],
 })
 
 module.exports = mongoose.model('user', user);
