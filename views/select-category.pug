@@ -1,0 +1,297 @@
+script(src='/js/jquery-3.3.1.min.js')
+link(rel='stylesheet', href='/stylesheets/styles.css')
+body#body-scroll
+#wrapper
+	.seleckt-block
+	li.b-navigation-menu__item(data-category='1000')
+		.b-navigation-menu__item-left
+			input(type="checkbox" id="shoesClothes" /*class="semi-active"*/)
+		.b-navigation-menu__item-right
+			i.fal.fa-tshirt.fa-fw
+			span.b-navigation-menu__item-category Одежда и обувь
+			i.fal.fa-chevron-down.fa-fw
+	
+	ul.b-navigation-menu-drop-down
+		li.b-navigation-menu-drop-down__item(data-category='1001')
+			input(type="checkbox", name="")
+			span.b-navigation-menu-drop-down__item-category Одежда 
+			span.b-navigation-menu-drop-down__item-total
+		li.b-navigation-menu-drop-down__item(data-category='1002')
+			input(type="checkbox", name="")
+			span.b-navigation-menu-drop-down__item-category Обувь 
+			span.b-navigation-menu-drop-down__item-total
+
+	li.b-navigation-menu__item(data-category='2000')
+		.b-navigation-menu__item-left
+			input(type="checkbox" id="accessories" )
+		.b-navigation-menu__item-right
+				i.fal.fa-leaf.fa-fw
+				span.b-navigation-menu__item-category Украшения и аксессуары
+				i.fal.fa-chevron-down.fa-fw
+
+	ul.b-navigation-menu-drop-down
+		li.b-navigation-menu-drop-down__item(data-category='2001')
+			input(type="checkbox", name="")
+			span.b-navigation-menu-drop-down__item-category Украшения 
+			span.b-navigation-menu-drop-down__item-total
+		li.b-navigation-menu-drop-down__item(data-category='2002')
+			input(type="checkbox", name="")
+			span.b-navigation-menu-drop-down__item-category Аксессуары 
+			span.b-navigation-menu-drop-down__item-total
+
+	li.b-navigation-menu__item(data-category='3000')
+		.b-navigation-menu__item-left
+			input(type="checkbox" id="beautyHealth" )
+		.b-navigation-menu__item-right
+				i.fal.fa-leaf.fa-fw
+				span.b-navigation-menu__item-category Красота и здоровье
+				i.fal.fa-chevron-down.fa-fw
+	ul.b-navigation-menu-drop-down
+		li.b-navigation-menu-drop-down__item(data-category='3001')
+			input(type="checkbox", name="")
+			span.b-navigation-menu-drop-down__item-category Аптеки 
+			span.b-navigation-menu-drop-down__item-total
+		li.b-navigation-menu-drop-down__item(data-category='3002')
+			input(type="checkbox", name="")
+			span.b-navigation-menu-drop-down__item-category Косметика 
+			span.b-navigation-menu-drop-down__item-total
+
+
+	li.b-navigation-menu__item(data-category='4000')
+		.b-navigation-menu__item-left
+			input(type="checkbox" class="active")
+		.b-navigation-menu__item-right
+				i.fal.fa-mobile.fa-fw
+				span.b-navigation-menu__item-category Электроника и техника
+				i.fal.fa-chevron-down.fa-fw
+
+	// Navigation drop-down menu
+	
+	ul.b-navigation-menu-drop-down
+		li.b-navigation-menu-drop-down__item(data-category='4001')
+			input(type="checkbox", name="")
+			span.b-navigation-menu-drop-down__item-category Фото и видео 
+			span.b-navigation-menu-drop-down__item-total 
+		li.b-navigation-menu-drop-down__item(data-category='4002')
+			input(type="checkbox", name="")
+			span.b-navigation-menu-drop-down__item-category Программное обеспечение 
+			span.b-navigation-menu-drop-down__item-total 
+		li.b-navigation-menu-drop-down__item(data-category='4003')
+			input(type="checkbox", name="")
+			span.b-navigation-menu-drop-down__item-category Техника для дома  
+			span.b-navigation-menu-drop-down__item-total 
+		li.b-navigation-menu-drop-down__item(data-category='4004')
+			input(type="checkbox", name="")
+			span.b-navigation-menu-drop-down__item-category Телефоны и планшеты
+			span.b-navigation-menu-drop-down__item-total 
+		li.b-navigation-menu-drop-down__item(data-category='4005')
+			input(type="checkbox", name="")
+			span.b-navigation-menu-drop-down__item-category Компьютеры и ноутбуки  
+			span.b-navigation-menu-drop-down__item-total 
+		
+
+	li.b-navigation-menu__item(data-category='5000')
+		.b-navigation-menu__item-left
+			input(type="checkbox")
+		.b-navigation-menu__item-right
+				i.fal.fa-plane.fa-fw
+				span.b-navigation-menu__item-category Путешествия
+				i.fal.fa-chevron-down.fa-fw
+
+	// Navigation drop-down menu
+	ul.b-navigation-menu-drop-down
+		li.b-navigation-menu-drop-down__item(data-category='5001')
+			input(type="checkbox", name="")
+			span.b-navigation-menu-drop-down__item-category Бронирование отелей
+			span.b-navigation-menu-drop-down__item-total
+		li.b-navigation-menu-drop-down__item(data-category='5002')
+			input(type="checkbox", name="")
+			span.b-navigation-menu-drop-down__item-category Заказ билетов
+			span.b-navigation-menu-drop-down__item-total
+		li.b-navigation-menu-drop-down__item(data-category='5003')
+			input(type="checkbox", name="")
+			span.b-navigation-menu-drop-down__item-category Подбор тура
+			span.b-navigation-menu-drop-down__item-total
+		li.b-navigation-menu-drop-down__item(data-category='5004')
+			input(type="checkbox", name="")
+			span.b-navigation-menu-drop-down__item-category Страхование путешественников
+			span.b-navigation-menu-drop-down__item-total
+		
+
+	li.b-navigation-menu__item(data-category='6000')
+		.b-navigation-menu__item-left
+			input(type="checkbox")
+		.b-navigation-menu__item-right
+				i.fal.fa-child.fa-fw
+				span.b-navigation-menu__item-category Дети
+				i.fal.fa-chevron-down.fa-fw
+	ul.b-navigation-menu-drop-down
+		li.b-navigation-menu-drop-down__item(data-category='6001')
+			input(type="checkbox", name="")
+			span.b-navigation-menu-drop-down__item-category Уход
+			span.b-navigation-menu-drop-down__item-total
+		li.b-navigation-menu-drop-down__item(data-category='6002')
+			input(type="checkbox", name="")
+			span.b-navigation-menu-drop-down__item-category Игрушки
+			span.b-navigation-menu-drop-down__item-total
+
+	li.b-navigation-menu__item(data-category='7000')
+		.b-navigation-menu__item-left
+			input(type="checkbox")
+		.b-navigation-menu__item-right
+				i.fal.fa-home.fa-fw
+				span.b-navigation-menu__item-category Все для дома
+				i.fal.fa-chevron-down.fa-fw
+
+	// Navigation drop-down menu
+	ul.b-navigation-menu-drop-down
+		li.b-navigation-menu-drop-down__item(data-category='7001')
+			input(type="checkbox", name="")
+			span.b-navigation-menu-drop-down__item-category Дом
+			span.b-navigation-menu-drop-down__item-total
+		li.b-navigation-menu-drop-down__item(data-category='7002')
+			input(type="checkbox", name="")
+			span.b-navigation-menu-drop-down__item-category Сад
+			span.b-navigation-menu-drop-down__item-total
+		li.b-navigation-menu-drop-down__item(data-category='7003')
+			input(type="checkbox", name="")
+			span.b-navigation-menu-drop-down__item-category Автотовары  
+			span.b-navigation-menu-drop-down__item-total
+		li.b-navigation-menu-drop-down__item(data-category='7004')
+			input(type="checkbox", name="")
+			span.b-navigation-menu-drop-down__item-category Мебель 
+			span.b-navigation-menu-drop-down__item-total
+		li.b-navigation-menu-drop-down__item(data-category='7005')
+			input(type="checkbox", name="")
+			span.b-navigation-menu-drop-down__item-category Зоотовары
+			span.b-navigation-menu-drop-down__item-total 
+		
+
+	
+
+	li.b-navigation-menu__item(data-category='8000')
+		.b-navigation-menu__item-left
+			input(type="checkbox")
+		.b-navigation-menu__item-right
+				i.fal.fa-gamepad.fa-fw
+				span.b-navigation-menu__item-category Досуг и развлечения
+				i.fal.fa-chevron-down.fa-fw
+
+	// Navigation drop-down menu
+	ul.b-navigation-menu-drop-down
+		li.b-navigation-menu-drop-down__item(data-category='8001')
+			input(type="checkbox", name="")
+			span.b-navigation-menu-drop-down__item-category Книги 
+			span.b-navigation-menu-drop-down__item-total 
+		li.b-navigation-menu-drop-down__item(data-category='8002')
+			input(type="checkbox", name="")
+			span.b-navigation-menu-drop-down__item-category Товары для творчества 
+			span.b-navigation-menu-drop-down__item-total 
+		li.b-navigation-menu-drop-down__item(data-category='8003')
+			input(type="checkbox", name="")
+			span.b-navigation-menu-drop-down__item-category Спорт  
+			span.b-navigation-menu-drop-down__item-total 
+		li.b-navigation-menu-drop-down__item(data-category='8004')
+			input(type="checkbox", name="")
+			span.b-navigation-menu-drop-down__item-category Товары для взрослых 
+			span.b-navigation-menu-drop-down__item-total 
+		li.b-navigation-menu-drop-down__item(data-category='8005')
+			input(type="checkbox", name="")
+			span.b-navigation-menu-drop-down__item-category Подарки и сувениры 
+			span.b-navigation-menu-drop-down__item-total
+		li.b-navigation-menu-drop-down__item(data-category='8006')
+			input(type="checkbox", name="")
+			span.b-navigation-menu-drop-down__item-category Организация праздников 
+			span.b-navigation-menu-drop-down__item-total
+		
+
+	li.b-navigation-menu__item(data-category='9000')
+		.b-navigation-menu__item-left
+			input(type="checkbox")
+		.b-navigation-menu__item-right
+				i.fal.fa-utensils.fa-fw
+				span.b-navigation-menu__item-category Доставка еды
+				i.fal.fa-chevron-down.fa-fw
+	ul.b-navigation-menu-drop-down
+		li.b-navigation-menu-drop-down__item(data-category='9001')
+			input(type="checkbox", name="")
+			span.b-navigation-menu-drop-down__item-category Рестораны
+			span.b-navigation-menu-drop-down__item-total
+		li.b-navigation-menu-drop-down__item(data-category='9002')
+			input(type="checkbox", name="")
+			span.b-navigation-menu-drop-down__item-category Магазины
+			span.b-navigation-menu-drop-down__item-total
+	
+
+	li.b-navigation-menu__item(data-category='10000')
+		.b-navigation-menu__item-left
+			input(type="checkbox")
+		.b-navigation-menu__item-right
+				i.fal.fa-concierge-bell.fa-fw
+				span.b-navigation-menu__item-category Услуги
+				i.fal.fa-chevron-down.fa-fw
+	
+	// Navigation drop-down menu
+	ul.b-navigation-menu-drop-down
+		li.b-navigation-menu-drop-down__item(data-category='10001')
+			input(type="checkbox", name="")
+			span.b-navigation-menu-drop-down__item-category Образование
+			span.b-navigation-menu-drop-down__item-total 
+		li.b-navigation-menu-drop-down__item(data-category='10002')
+			input(type="checkbox", name="")
+			span.b-navigation-menu-drop-down__item-category Доставка цветов 
+			span.b-navigation-menu-drop-down__item-total 
+		li.b-navigation-menu-drop-down__item(data-category='10003')
+			input(type="checkbox", name="")
+			span.b-navigation-menu-drop-down__item-category Хостинг и провайдер 
+			span.b-navigation-menu-drop-down__item-total 
+		li.b-navigation-menu-drop-down__item(data-category='10004')
+			input(type="checkbox", name="")
+			span.b-navigation-menu-drop-down__item-category Купонные сервисы
+			span.b-navigation-menu-drop-down__item-total 
+		
+
+	li.b-navigation-menu__item(data-category='11000')
+		.b-navigation-menu__item-left
+			input(type="checkbox")
+		.b-navigation-menu__item-right
+				i.fal.fa-wallet
+				span.b-navigation-menu__item-category Финансы
+				i.fal.fa-chevron-down.fa-fw
+
+	// Navigation drop-down menu
+	ul.b-navigation-menu-drop-down
+		li.b-navigation-menu-drop-down__item(data-category='11001')
+			input(type="checkbox", name="")
+			span.b-navigation-menu-drop-down__item-category Автострахование
+			span.b-navigation-menu-drop-down__item-total 
+		li.b-navigation-menu-drop-down__item(data-category='11002')
+			input(type="checkbox", name="")
+			span.b-navigation-menu-drop-down__item-category Туристическое страхование 
+			span.b-navigation-menu-drop-down__item-total 
+		li.b-navigation-menu-drop-down__item(data-category='11003')
+			input(type="checkbox", name="")
+			span.b-navigation-menu-drop-down__item-category Кредиты и займы  
+			span.b-navigation-menu-drop-down__item-total 
+		li.b-navigation-menu-drop-down__item(data-category='11004')
+			input(type="checkbox", name="")
+			span.b-navigation-menu-drop-down__item-category Дебетовые и кредитные карты
+			span.b-navigation-menu-drop-down__item-total
+
+	li.b-navigation-menu__item(data-category='12000')
+		.b-navigation-menu__item-left
+			input(type="checkbox")
+		.b-navigation-menu__item-right
+				i.fal.fa-globe-asia
+				span.b-navigation-menu__item-category Китайские магазины
+				i.fal.fa-chevron-down.fa-fw
+
+	li.b-navigation-menu__item(data-category='12001')
+		.b-navigation-menu__item-left
+			input(type="checkbox")
+		.b-navigation-menu__item-right
+				i.fal.fa-globe
+				span.b-navigation-menu__item-category Иностранные магазины
+				i.fal.fa-chevron-down.fa-fw
+script.
+script(src="/javascripts/cat.js")
